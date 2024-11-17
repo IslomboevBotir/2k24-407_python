@@ -1,11 +1,3 @@
-class Car:
-    def __init__(self, car_type, model, color, base_price, final_price):
-        self.car_type = car_type
-        self.model = model
-        self.color = color
-        self.base_price = base_price
-        self.final_price = final_price
-
 class CarDealership:
     def __init__(self):
         self.car_types = ['Sedan', 'Hatchback', 'Coupe', 'Minivan', 'SUV']
