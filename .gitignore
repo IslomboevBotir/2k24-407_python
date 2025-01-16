@@ -1,8 +1,33 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+# macOS tizimi tomonidan avtomatik yaratiladigan fayllarni inkor qilish
+.DS_Store
+
+# Python uchun
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+.venv/
+.env
+
+# IDE va editorlar uchun
+.vscode/
+.idea/
+*.iml
+
+# Log va vaqtinchalik fayllar
+*.log
+*.tmp
+*.swp
+*.bak
+
+# Qurilgan va keshlangan fayllar
+build/
+dist/
+*.egg-info/
+.cache/
+
+# OS tomonidan yaratiladigan fayllar
+Thumbs.db
+Desktop.ini
