@@ -9,9 +9,9 @@ from datetime import datetime
 
 # Database connection parameters
 DB_PARAMS = {
-    "dbname": "l_db",
-    "user": "postgres",
-    "password": "Abdurahmon005",
+    "dbname": "database_name",
+    "user": "user_name",
+    "password": "Password",
     "host": "localhost",
     "port": "5432"
 }
@@ -35,7 +35,7 @@ def save_to_database(title, description=None, image_url=None, publish_date=None)
         formatted_date = convert_date(publish_date) if publish_date else None
 
         insert_query = '''
-        INSERT INTO cres 
+        INSERT INTO table_name 
         (title, description, image_url, publish_date)
         VALUES (%s, %s, %s, %s);
         '''
