@@ -22,3 +22,8 @@ DB_PORT=5432             # PostgreSQL porti (standart: 5432)
 DB_NAME=labaratorny_db   # Loyihaga tegishli ma’lumotlar bazasi nomi
 DB_USER=postgres         # PostgreSQL foydalanuvchi nomi
 DB_PASSWORD=postgres     # Foydalanuvchi paroli
+
+
+Setup your database connection:
+and project is ready to use:
+do---> python main.py

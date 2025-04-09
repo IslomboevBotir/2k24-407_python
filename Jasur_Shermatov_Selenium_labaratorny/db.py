@@ -23,7 +23,7 @@ class Certificate(Base):
     title = Column(String, nullable=False)
     created_at = Column(String, nullable=False)  # Changed from DateTime to String
     image_url = Column(String, nullable=False)
-    description = Column(Text, nullable=False)
+    full_description = Column(Text, nullable=False)
 
 
 def setup_database():
@@ -44,7 +44,7 @@ def save_to_database(certificates, engine):
                     "created_at"
                 ],  # Now directly accepts "YYYY-MM" format as a string
                 image_url=cert["image_url"],
-                description=cert["description"],
+                full_description=cert["description"],
             )
             session.add(certificate)
         session.commit()
