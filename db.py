@@ -6,9 +6,9 @@ load_dotenv()
 
 def get_connection():
     return psycopg2.connect(
-        dbname = "selenium",
+        dbname = "job_portal_db",
         user = "postgres",
-        password = "password",
+        password = "Dilwod",
         host = "localhost",
         port = "5432"
     )
@@ -18,7 +18,7 @@ def create_table_if_not_exists():
     cursor = conn.cursor()
 
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS certifications (
+        CREATE TABLE IF NOT EXISTS projects (
             id SERIAL PRIMARY KEY,
             header VARCHAR NOT NULL,
             date VARCHAR,
@@ -29,4 +29,3 @@ def create_table_if_not_exists():
     conn.commit()
     cursor.close()
     conn.close()
-
