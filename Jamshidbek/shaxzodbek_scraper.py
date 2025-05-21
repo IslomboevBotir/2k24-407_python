@@ -216,8 +216,8 @@ def save_to_text_file(data, category):
     """Ma'lumotlarni matn fayliga saqlash"""
     try:
         # Papkani yaratish (mavjud bo'lmasa)
-        if not os.path.exists("shaxzodbek_data"):
-            os.makedirs("shaxzodbek_data")
+        if not os.path.exists("../shaxzodbek_data"):
+            os.makedirs("../shaxzodbek_data")
 
         # Fayl nomi yaratish
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
