@@ -1,23 +1,65 @@
-# 2k24-407_python
-An educational repository with assignments for students.
+AI Post Scraper
+Bu loyiha veb-saytdan ("https://shaxzodbek.com/") AI bilan bog'liq postlarni yig'ib, ularni SQLite ma'lumotlar bazasida saqlaydi. Selenium yordamida veb-sahifalarni avtomatik ravishda boshqaradi va ma'lumotlarni (sarlavha, subtitr, rasm URL, nashr sanasi, havola va to'liq matn) saqlaydi.
+Talablar
+Loyihani ishlatish uchun quyidagi kutubxonalar o'rnatilgan bo'lishi kerak:
 
-**Clone the repository**
+Python 3.8 yoki undan yuqori
+selenium
+webdriver_manager
+sqlite3 (Python bilan birga keladi)
 
-## Stages of task execution
+O'rnatish
 
-1. **Select Car Type**: The user must select the car type from the suggested categories such as sedan, hatchback, coupe, minivan, SUV.
+Loyihani klonlang:
+git clone https://github.com
+cd sizning-repo-nomi
 
-2. **Selecting a car model**: After selecting the type of car, the user selects a specific model from those available in that category, each of which has its own price.
 
-3. **Color selection**: The user selects the color of the car from the suggested options (black, white, gray). Available colors are limited, and the user can select only one of the suggested ones.
+Virtual muhitni yarating va faollashtiring:
+python -m venv venv
+source venv/bin/activate  # Windows uchun: venv\Scripts\activate
 
-4. **Confirmation of selection**: After selecting the model and color, the user is shown information about the selected car, including type, model, color and price.
 
-5. **Payment and completion of purchase**: The user confirms the purchase, after which the system displays the final price and completes the purchase process.
+Kerakli kutubxonalarni o'rnating:
+pip install selenium webdriver_manager
 
----
-To complete the task, you will need to use:
-- **Loops** to process user input and iterate through the list of available cars.
-- **Conditional statements** to check the user's selection and display the available options.
-- **Object-oriented programming (OOP)** to create classes, encapsulate data, and control the behavior of objects.
-- **Basic elements of Python**, such as working with data, functions, input, and output.
+
+Chrome brauzeri va ChromeDriver o'rnatilgan bo'lishi kerak. webdriver_manager ChromeDriver-ni avtomatik yuklaydi.
+
+
+Loyiha tuzilmasi
+
+scraper.py: Veb-saytdan ma'lumotlarni yig'uvchi asosiy skript.
+db.py: SQLite ma'lumotlar bazasini boshqarish uchun funksiyalar.
+posts.db: Yig'ilgan ma'lumotlar saqlanadigan SQLite fayli (avtomatik yaratiladi).
+
+Foydalanish
+
+Loyihani ishga tushurish uchun scraper.py faylini ishga tushuring:
+python scraper.py
+
+
+Skript quyidagi amallarni bajaradi:
+
+"https://shaxzodbek.com/" saytiga kiradi.
+"Posts" bo'limiga o'tadi va "Next" tugmasini ikki marta bosadi.
+"The Rise of AI in Everyday Life" nomli postni topadi.
+Postning sarlavhasi, subtitri, rasm URL, nashr sanasi, havola va to'liq matnini yig'adi.
+Ma'lumotlarni posts.db fayliga saqlaydi.
+
+
+Saqlangan ma'lumotlarni ko'rish uchun db.py dagi get_all_posts() funksiyasidan foydalaning:
+from db import get_all_posts
+posts = get_all_posts()
+for post in posts:
+    print(post)
+
+
+
+Eslatmalar
+
+Internet aloqasi barqaror bo'lishi kerak.
+Agar sayt tuzilmasi o'zgarsa, XPath so'rovlarini yangilash kerak bo'lishi mumkin.
+Har safar skript ishga tushganda eski posts.db fayli o'chiriladi va yangisi yaratiladi.
+
+# Selenium_Lab
