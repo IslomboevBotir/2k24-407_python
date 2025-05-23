@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import ElementClickInterceptedException, TimeoutException
 import time
-from db import init_database, save_post
+from Muyassar.db import init_database, save_post
 
 
 def setup_driver():
