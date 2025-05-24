@@ -1,46 +1,68 @@
-# 📌 Programming Laboratory
+# Scraper Project
 
-## 🏆 Vazifa
-Selenium kutubxonasidan foydalangan holda [Shaxzodbek](https://shaxzodbek.com/) saytining sahifalariga kiring va quyidagi elementlarni aniqlang:
+Ushbu loyiha veb saytlardan ma'lumotlarni avtomatik tarzda yig‘ib, PostgreSQL bazasiga saqlash uchun yozilgan. Python va BeautifulSoup kutubxonalari asosida ishlaydi.
 
-- **Posts** (Maqolalar)
-- **Projects** (Loyihalar)
-- **Certifications** (Sertifikatlar)
+Loyiha tuzilmasi
 
-Har bir sahifadagi tegishli **card (kartochka)** elementlarini toping va ularning quyidagi ma’lumotlarini oling:
+```
+scraper_project/
+│
+├── main.py              # Dasturning kirish nuqtasi
+├── scraper.py           # Scraping (ma'lumotlarni yig‘ish) funksiyalari
+├── db.py                # PostgreSQL bilan ishlovchi funksiya va metodlar
+├── config.py            # Konfiguratsiya: DB sozlamalari
+├── requirements.txt     # Kerakli Python kutubxonalar ro‘yxati
+└── README.md            # Ushbu hujjat
+```
 
-✅ **Sarlavha (title)**  
-✅ **Rasm (image)**  
-✅ **Matn (text)**  
-✅ **Chop etilgan sana (publish_date)**  
+Talablar
 
-Bundan tashqari, ba'zi kartochkalarda quyidagi qo'shimcha ma’lumotlar bo‘lishi mumkin:
+```bash
+pip install -r requirements.txt
+```
 
-✅ **Havola (link)**  
-✅ **Asbob turi (tools_type)**  
+Yoki alohida ko‘rsating:
+
+- requests  
+- beautifulsoup4  
+- psycopg2
+
+Ishga tushirish
+
+1. `config.py` faylida DB sozlamalarni to‘ldiring:
+
+```python
+DB_CONFIG = {
+    "host": "localhost",
+    "database": "scraper_db",
+    "user": "postgres",
+    "password": "your_password"
+}
+```
+
+2. Loyihani quyidagicha ishga tushiring:
+
+```bash
+python main.py
+```
+
+Ma'lumotlar bazasi
+
+Loyiha PostgreSQL bilan ishlaydi. `db.py` faylida jadval yaratish, ma'lumot qo‘shish funksiyalari mavjud.
+
+Texnologiyalar
+
+- Python 3.x  
+- BeautifulSoup  
+- Requests  
+- PostgreSQL  
+- Psycopg2
+
+Test
+
+Hozirda avtomatik testlar mavjud emas. Dasturni `main.py` orqali ishga tushirib, terminalda natijalarni tekshirish mumkin. 
+Eslatma
+
+Har doim scraping qilayotgan saytning `robots.txt` faylini tekshiring. Veb saytlar scrapingga ruxsat bermagan bo‘lishi mumkin.
 
 
-## 💾 Ma'lumotlarni saqlash
-Olingan ma’lumotlarni **.txt** faylga yoki **PostgreSQL** bazasiga saqlang.
-
-> **📌 Muhim:** Database (PostgreSQL) ga saqlash orqali **qo‘shimcha 10 ball** olish imkoniyati mavjud!
-
-
-## 🎯 Ball berish mezonlari
-- ✅ **Barcha ma’lumotlarni to‘g‘ri yig‘ish**
-- ✅ **Kod tozaligi (Clean Code)**
-- ✅ **To‘g‘ri Database dizayni**
-- ✅ **Optimallik va samaradorlik**
-
-**🎖️ Yuqori ball olish uchun:**
-- Clean Code va Database dizayni prinsiplari asosida ishlashga harakat qiling.
-- Kerakli barcha ma’lumotlarni aniq va to‘g‘ri yig‘ing.
-- Kodning tushunarli va oson kengaytiriladigan bo‘lishiga e’tibor bering.
-
-
-## 🎁 Bonus
-Barcha topshiriqlarni bajarganingizdan so‘ng **Selenium yordamida Shaxzodbekning barcha ijtimoiy tarmoqlariga obuna bo‘lishingiz shart!** 😃
-
----
-
-🚀 **Omad! Kodni toza yozing va maksimal ballni qo‘lga kiriting!**
